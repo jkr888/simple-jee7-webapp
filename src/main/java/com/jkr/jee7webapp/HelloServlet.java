@@ -16,7 +16,7 @@ public class HelloServlet extends HttpServlet {
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     PrintWriter out = resp.getWriter();
-    out.printf("%s", "hello world from a Jee7 servlet");
+    out.printf("%s", "hello world from a Jee7 servlet - new");
     out.flush();
   }
 }

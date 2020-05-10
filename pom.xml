@@ -25,11 +25,15 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>io.prometheus.jmx</groupId>
-			<artifactId>collector</artifactId>
-			<version>0.12.1-SNAPSHOT</version>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>3.3.7-1</version>
 		</dependency>
-
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery</artifactId>
+			<version>3.1.1</version>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -38,25 +42,15 @@
 				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
 				<version>${jetty.version}</version>
+        
 				<configuration>
+          			<scanIntervalSeconds>2</scanIntervalSeconds>
 					<skip>false</skip>
 					<httpConnector>
 						<host>localhost</host>
 						<port>8080</port>
 					</httpConnector>
-					<reload>manual</reload>
-					<webApp>
-						<contextPath>/demo</contextPath>
-						<!--<webInfIncludeJarPattern>.*/webjars/.*\.jar$</webInfIncludeJarPattern> -->
-						<!--<containerIncludeJarPattern>^$</containerIncludeJarPattern> -->
-						<sessionHandler
-							implementation="org.eclipse.jetty.server.session.SessionHandler">
-							<sessionManager
-								implementation="org.eclipse.jetty.server.session.HashSessionManager">
-								<storeDirectory>${project.basedir}/target/jetty-sessions</storeDirectory>
-							</sessionManager>
-						</sessionHandler>
-					</webApp>
+					<reload>automatic</reload>
 				</configuration>
 			</plugin>
 			<plugin>
