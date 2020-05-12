@@ -13,7 +13,7 @@
 
 	<properties>
 		<endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
-		<jetty.version>9.3.16.v20170120</jetty.version>
+		<jetty.version>9.4.12.v20180830</jetty.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
