@@ -13,7 +13,7 @@
 
 	<properties>
 		<endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
-		<jetty.version>9.3.16.v20170120</jetty.version>
+		<jetty.version>9.4.19.v20190610</jetty.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
@@ -42,15 +42,13 @@
 				<groupId>org.eclipse.jetty</groupId>
 				<artifactId>jetty-maven-plugin</artifactId>
 				<version>${jetty.version}</version>
-        
 				<configuration>
-          			<scanIntervalSeconds>2</scanIntervalSeconds>
-					<skip>false</skip>
-					<httpConnector>
-						<host>localhost</host>
-						<port>8080</port>
-					</httpConnector>
-					<reload>automatic</reload>
+					<webApp>
+						<_initParams>
+							<org.eclipse.jetty.servlet.Default.useFileMappedBuffer>false</org.eclipse.jetty.servlet.Default.useFileMappedBuffer>
+						</_initParams>
+					</webApp>
+					<scanIntervalSeconds>5</scanIntervalSeconds>
 				</configuration>
 			</plugin>
 			<plugin>
